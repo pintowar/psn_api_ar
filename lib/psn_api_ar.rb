@@ -7,15 +7,15 @@ module PsnApiAr
 		def initialize
 			@url_base = "http://www.psnapi.com.ar/ps3/api/psn.asmx"
 		end
-	
+
 		def get_game(username, game_id)
-			doc = Nokogiri::XML(open("#{@url_base}/getGames?sPSNID=#{username}"))
-			Nori.parse(doc.to_s)["ArrayOfGame"]["Game"]
+			doc = Nokogiri::XML(open("#{@url_base}/getGame?sPSNID=#{username}&sIdGame=#{game_id}"))
+			Nori.parse(doc.to_s)
 		end
 
 		def get_games(username)
-			doc = Nokogiri::XML(open("#{@url_base}/getGame?sPSNID=#{username}&sIdGame=#{game_id}"))
-			Nori.parse(doc.to_s)
+			doc = Nokogiri::XML(open("#{@url_base}/getGames?sPSNID=#{username}"))
+			Nori.parse(doc.to_s)["ArrayOfGame"]["Game"]
 		end
 
 		def get_list_games(game_id)
