@@ -13,7 +13,6 @@ Usage
 -----
 
     require "psn_api_ar"
-    require "psn_trophies"
     
     client = PsnApiAr::Client.new
     
