@@ -15,4 +15,5 @@ Usage
     require "psn_api_ar"
     
     client = PsnApiAr::Client.new
-    
+    client.get_games 'user_id' #like pintowar ;)
+
